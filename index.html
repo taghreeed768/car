@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>car | Automotive Service</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+
+/* ================= GLOBAL ================= 
+*/
+
+body {
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    background-image: url(car.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5rem;
+}
+
+nav .logo {
+    font-size: 2.5rem;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+.high-light {
+    background-color: #00bbff;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+/* ================= CONTENT ================= */
+
+.content {
+    margin:12rem;
+    padding-left: 110px;
+    width: 62rem;
+}
+
+.content h1 {
+    font-size: 2.5rem;
+}
+
+.content p {
+    font-size: 1.5rem;
+}
+
+/* ================= CARD ================= */
+
+.card-wrapper {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    padding-left: 20px;
+}
+
+.card {
+    max-width: 300px;
+    width: 90%;
+    background-color: #ffffff;
+    border-radius: 1.1rem;
+    box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.2),
+                0 4px 10px rgba(25, 42, 73, 0.849);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+   
+}
+
+.card > img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 1.5rem auto 0.5rem auto;
+    transition: transform 0.3s ease;
+}
+
+.card:hover > img {
+    transform: scale(1.05);
+}
+
+.bottom {
+    padding: 1rem 1.2rem;
+    text-align: center;
+    background-color: #ffffff;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.bottom h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1a2c3e;
+}
+
+.bottom p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #386079;
+}
+
+.bottom-new {
+    padding: 1rem;
+    text-align: center;
+    background-color: #ffffff;
+    transition: background 0.3s ease;
+    color: #000000;
+}
+
+.bottom-new:hover {
+    background-color: #2c6291;
+    color: white;
+}
+
+/* ================= FORM ================= */
+
+.form-wrapper {
+    position: absolute;
+    top: 75px;
+    right: 0;
+    padding-right: 20px;
+    width: 300px;
+}
+
+form {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 15px 30px -12px rgba(0,0,0,0.2),
+                0 4px 10px rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    top: 45px;
+}
+
+form h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #3c4b5b;
+}
+
+label {
+    font-size: 0.9rem;
+    color: #2073a6;
+}
+
+input {
+    padding: 0.8rem 1rem;
+    border: 2px solid #e1d6d6;
+    border-radius: 0.6rem;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    border-color: rgb(255, 166, 0);
+    box-shadow: 0 0 5px rgba(255,165,0,0.5);
+}
+
+input:valid {
+    border-color: rgb(2, 194, 2);
+}
+
+input:invalid {
+    border-color: red;
+}
+
+button {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: #00b7ff;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #0088ff;
+    transform: scale(1.03);
+}
+
+/* ================= DECORATIVE BOX ================= */
+
+.decorative-box {
+    display: flex;
+    align-self: end;
+    position: absolute;  
+    top: 20px; 
+    left: 92%; 
+    transform: translateX(-50%);
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    max-width: 300px;
+    font-family: "Nunito", sans-serif;
+    text-align: center;
+    color: #25517d;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.decorative-box:hover {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.decorative-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background: rgb(2, 191, 248);
+    border-radius: 2px;
+}
+
+.decorative-box::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    background: rgba(0, 195, 255, 0.195);
+    border-radius: 50%;
+}
+
+/* ================= DESIGNER BOXES ================= */
+
+
+.designer-box1,
+.designer-box2 {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    border-radius:9px;
+    font-size: 12px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+}
+
+.designer-box1 {
+    background: linear-gradient(135deg,#11213f,#1e5fce);
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.designer-box2 {
+    background: linear-gradient(135deg,#00c8ff,#009dff);
+    z-index: 5;
+    top: 20px;
+    left: 20px;
+}
+
+/* ================= PURCHASE BOX ================= */
+
+.purchase-box {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    max-width: 320px;
+    background: linear-gradient(135deg, #000000, #0c60de);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0,0,100,0.3);
+}
+
+.purchase-box::first-line {
+    color: #2e9ffb;
+    font-weight: bold;
+}
+
+.purchase-box::first-letter {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background-color: #676da4;
+    padding: 1rem;
+}
+
+footer ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    color: #fff;
+}
+
+footer strong {
+    color: #00c3ffdc;
+    
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+            <i class="fa-solid fa-car"></i> Automotive
+        </div>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Price</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#" class="high-light">BOOK APPOINTMENT</a></li>
+        </ul>
+
+        <!-- CARD -->
+        <div class="card-wrapper">
+            <div class="card">
+                <img src="1f9ec93c-3bf8-40d2-a4d9-0168f425bea8.png" alt="icon">
+                <div class="bottom">
+                    <h2>Premium Car Market</h2>
+                    <p>Premium car care with excellence and precision.</p>
+                </div>
+                <div class="bottom-new">
+                    ✨ MORE DETAILS ✨
+                </div>
+            </div>
+        </div>
+
+        <!-- FORM -->
+        <div class="form-wrapper">
+            <form>
+                <h2>SIGN IN</h2>
+
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Your Password" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+    </nav>
+
+    <div class="content">
+        <h1>Your Car Repairs</h1>
+        <p>Visit us for your service</p>
+        <a href="#" class="high-light">BOOK APPOINTMENT</a>
+    </div>
+
+    <div class="purchase-box">
+        Find your perfect car today. Browse our latest models, compare prices,
+        and enjoy exclusive offers on brand-new and certified pre-owned vehicles.
+        Drive your dream with confidence and style.
+    </div>
+
+</header>
+
+<!-- DECORATIVE BOX -->
+<a href="#" class="decorative-box">
+    Reviews
+</a>
+
+<!-- DESIGNER BOXES -->
+<div class="designer-wrapper">
+    <div class="designer-box1"></div>
+    <div class="designer-box2">
+        Designed by Taghreed 12 years old✨
+    </div>
+</div>
+
+<div class="purchase-box">
+    Find your perfect car today. Browse our latest models, compare prices,
+    and enjoy exclusive offers on brand-new and certified pre-owned vehicles.
+    Drive your dream with confidence and style.
+</div>
+
+<p></p>
+<footer>
+    <ul>
+        <li>
+            <strong>Our location</strong>
+            <p>Egypt - Cairo</p>
+        </li>
+        <li>
+            <strong>Phone</strong>
+            <p>01008641099</p>
+        </li>
+        <li>
+            <strong>E-mail</strong>
+            <p>taghreedota712014@gmail.com</p>
+        </li>
+    </ul>
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
